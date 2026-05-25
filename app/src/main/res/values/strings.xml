@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">МатТьютор</string>
+    <string name="nav_home">Главная</string>
+    <string name="nav_theory">Теория</string>
+    <string name="nav_chat">ИИ-чат</string>
+    <string name="tab_theory">📖 Теория</string>
+    <string name="tab_examples">💡 Примеры</string>
+    <string name="tab_practice">✏️ Практика</string>
+    <string name="btn_ask_ai">🤖 Спросить ИИ-репетитора</string>
+    <string name="context_label">КОНТЕКСТ</string>
+    <string name="context_hint">Репетитор знает, что вы сейчас изучаете</string>
+    <string name="chat_input_hint">Задайте вопрос…</string>
+    <string name="typing_indicator">Репетитор печатает…</string>
+    <string name="clear_history">Очистить историю</string>
+    <string name="error_network">Нет соединения с сервером</string>
+    <string name="error_api_key">Укажите API-ключ в local.properties</string>
+</resources>

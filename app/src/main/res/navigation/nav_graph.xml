@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ru.mathtutor.app.presentation.home.HomeFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment"
+            app:launchSingleTop="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_topicFragment"
+            app:destination="@id/topicFragment"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:launchSingleTop="true"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_progressFragment"
+            app:destination="@id/progressFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="ru.mathtutor.app.presentation.home.ProgressFragment"
+        android:label="Прогресс"
+        tools:layout="@layout/fragment_progress"/>
+
+    <fragment
+        android:id="@+id/sectionsFragment"
+        android:name="ru.mathtutor.app.presentation.theory.SectionsFragment"
+        android:label="Теория"
+        tools:layout="@layout/fragment_sections">
+
+        <action
+            android:id="@+id/action_sectionsFragment_to_topicsFragment"
+            app:destination="@id/topicsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/topicsFragment"
+        android:name="ru.mathtutor.app.presentation.theory.TopicsFragment"
+        android:label="Темы"
+        tools:layout="@layout/fragment_topics">
+
+        <argument android:name="sectionId"    app:argType="string"/>
+        <argument android:name="sectionTitle" app:argType="string"/>
+
+        <action
+            android:id="@+id/action_topicsFragment_to_topicFragment"
+            app:destination="@id/topicFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/topicFragment"
+        android:name="ru.mathtutor.app.presentation.topic.TopicFragment"
+        android:label="Тема"
+        tools:layout="@layout/fragment_topic">
+
+        <argument android:name="topicId"     app:argType="string"/>
+        <argument android:name="topicTitle"  app:argType="string"/>
+        <argument android:name="sectionTitle" app:argType="string"/>
+
+        <action
+            android:id="@+id/action_topicFragment_to_chatFragment"
+            app:destination="@id/chatFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="ru.mathtutor.app.presentation.chat.ChatFragment"
+        android:label="ИИ-чат"
+        tools:layout="@layout/fragment_chat">
+
+        <argument android:name="topicId"     app:argType="string" android:defaultValue="@null" app:nullable="true"/>
+        <argument android:name="topicTitle"  app:argType="string" android:defaultValue="@null" app:nullable="true"/>
+        <argument android:name="sectionTitle" app:argType="string" android:defaultValue="@null" app:nullable="true"/>
+        <argument android:name="contextContent" app:argType="string" android:defaultValue="@null" app:nullable="true"/>
+    </fragment>
+
+</navigation>

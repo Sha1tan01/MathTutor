@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_screen">
+
+    <!-- Topbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_topbar"
+        android:padding="20dp"
+        android:paddingTop="40dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_topic_title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_section_subtitle"
+            android:textSize="13sp"
+            android:textColor="#CCffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/blue_700"
+        app:tabSelectedTextColor="@color/blue_700"
+        app:tabTextColor="@color/bottom_nav_selector"
+        app:tabTextAppearance="@style/TabTextAppearance">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📖 Теория"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💡 Примеры"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✏️ Практика"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"/>
+
+    <!-- Theory content — WebView renders Markdown + MathJax LaTeX -->
+    <ru.mathtutor.app.presentation.common.MathWebView
+        android:id="@+id/wv_theory_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <!-- Examples -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_examples"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:padding="12dp"
+        android:clipToPadding="false"/>
+
+    <!-- Practice -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_practice"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:padding="12dp"
+        android:clipToPadding="false"/>
+
+    <!-- Ask AI button -->
+    <Button
+        android:id="@+id/btn_ask_ai"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_margin="16dp"
+        android:text="🤖 Спросить ИИ-репетитора по этой теме"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:background="@drawable/bg_ai_button"
+        android:textColor="@color/white"
+        style="@style/Widget.Material3.Button"/>
+</LinearLayout>

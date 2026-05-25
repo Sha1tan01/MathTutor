@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_corner_radius">14dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
+    <dimen name="topbar_padding_top">40dp</dimen>
+    <dimen name="item_spacing">8dp</dimen>
+    <dimen name="bottom_nav_height">56dp</dimen>
+</resources>

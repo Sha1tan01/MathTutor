@@ -1,0 +1,6 @@
+## This file must NOT be committed to version control.
+## Укажите ваш OpenAI API ключ:
+# AI_API_KEY=sk-proj-xxxxxxxxxxxxxxxxxxxxxxxx
+
+## Путь к Android SDK (задаётся автоматически Android Studio):
+# sdk.dir=/Users/username/Library/Android/sdk

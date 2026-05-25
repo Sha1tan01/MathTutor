@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand blues -->
+    <color name="blue_50">#E6F1FB</color>
+    <color name="blue_100">#B5D4F4</color>
+    <color name="blue_200">#85B7EB</color>
+    <color name="blue_400">#378ADD</color>
+    <color name="blue_700">#185FA5</color>
+    <color name="blue_800">#0C447C</color>
+    <color name="blue_900">#042C53</color>
+
+    <!-- Status dots -->
+    <color name="status_done">#43A047</color>
+    <color name="status_partial">#FB8C00</color>
+    <color name="status_not_started">#90CAF9</color>
+
+    <!-- Section icon backgrounds -->
+    <color name="icon_bg_blue">#E3F2FD</color>
+    <color name="icon_bg_teal">#E0F7FA</color>
+    <color name="icon_bg_purple">#EDE7F6</color>
+    <color name="icon_bg_green">#E8F5E9</color>
+    <color name="icon_bg_orange">#FFF3E0</color>
+    <color name="icon_bg_red">#FFEBEE</color>
+
+    <!-- UI surface -->
+    <color name="white">#FFFFFF</color>
+    <color name="bg_screen">#F0F4F8</color>
+    <color name="card_border">#C8D8F0</color>
+    <color name="card_blue_bg">#E3F2FD</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_muted">#888888</color>
+
+    <!-- Chat bubbles -->
+    <color name="bubble_user_start">#1565C0</color>
+    <color name="bubble_user_end">#1976D2</color>
+    <color name="bubble_ai_bg">#FFFFFF</color>
+
+    <!-- Context banner -->
+    <color name="banner_start">#E3F2FD</color>
+    <color name="banner_end">#EDE7F6</color>
+
+    <!-- Material required -->
+    <color name="colorPrimary">#1565C0</color>
+    <color name="colorPrimaryVariant">#0D47A1</color>
+    <color name="colorSecondary">#42A5F5</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+</resources>

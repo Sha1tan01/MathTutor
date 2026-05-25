@@ -1,0 +1,333 @@
+[
+  {
+    "id": "limits_intro",
+    "sectionId": "math_analysis",
+    "title": "Пределы функций",
+    "orderIndex": 1,
+    "theory": "## Предел функции\n\nГоворят, что функция $f(x)$ имеет предел $L$ при $x \\to a$, если для любого $\\varepsilon > 0$ существует $\\delta > 0$ такое, что при $0 < |x - a| < \\delta$ выполняется $|f(x) - L| < \\varepsilon$.\n\n$$\\lim_{x \\to a} f(x) = L$$\n\n### Первый замечательный предел\n\n$$\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$$\n\n### Второй замечательный предел\n\n$$\\lim_{x \\to \\infty} \\left(1 + \\frac{1}{x}\\right)^x = e$$\n\n### Правила вычисления\n- Предел суммы: $\\lim(f + g) = \\lim f + \\lim g$\n- Предел произведения: $\\lim(f \\cdot g) = \\lim f \\cdot \\lim g$\n- Предел частного: $\\lim \\frac{f}{g} = \\frac{\\lim f}{\\lim g}$, если $\\lim g \\neq 0$",
+    "examples": [
+      {
+        "id": "ex_limit_1",
+        "title": "Вычисление предела подстановкой",
+        "steps": [
+          { "stepNumber": 1, "description": "Найти предел при x → 3", "formula": "$\\lim_{x \\to 3}(x^2 - 2x + 1)$" },
+          { "stepNumber": 2, "description": "Подставляем x = 3 напрямую (полином непрерывен)", "formula": "$= 9 - 6 + 1 = 4$" }
+        ]
+      },
+      {
+        "id": "ex_limit_2",
+        "title": "Раскрытие неопределённости 0/0",
+        "steps": [
+          { "stepNumber": 1, "description": "Дан предел с неопределённостью", "formula": "$\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}$" },
+          { "stepNumber": 2, "description": "Разложим числитель на множители", "formula": "$= \\lim_{x \\to 2} \\frac{(x-2)(x+2)}{x-2}$" },
+          { "stepNumber": 3, "description": "Сокращаем и подставляем", "formula": "$= \\lim_{x \\to 2}(x+2) = 4$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_limit_1",
+        "topicId": "limits_intro",
+        "question": "Чему равен lim(x→3) (x² − 9) / (x − 3)?",
+        "options": ["0", "3", "6", "Не существует"],
+        "correctIndex": 2,
+        "explanation": "(x²−9)/(x−3) = (x−3)(x+3)/(x−3) = x+3. При x=3: 3+3 = 6"
+      },
+      {
+        "id": "p_limit_2",
+        "topicId": "limits_intro",
+        "question": "Чему равен lim(x→0) sin(3x) / x?",
+        "options": ["0", "1", "3", "∞"],
+        "correctIndex": 2,
+        "explanation": "sin(3x)/x = 3·sin(3x)/(3x) → 3·1 = 3 по первому замечательному пределу"
+      }
+    ]
+  },
+  {
+    "id": "derivative",
+    "sectionId": "math_analysis",
+    "title": "Производная функции",
+    "orderIndex": 2,
+    "theory": "## Производная\n\n**Производная** функции $f(x)$ в точке $x_0$ — предел отношения приращения функции к приращению аргумента:\n\n$$f'(x_0) = \\lim_{\\Delta x \\to 0} \\frac{f(x_0 + \\Delta x) - f(x_0)}{\\Delta x}$$\n\n### Таблица производных\n\n| Функция | Производная |\n|---------|------------|\n| $x^n$ | $nx^{n-1}$ |\n| $\\sin x$ | $\\cos x$ |\n| $\\cos x$ | $-\\sin x$ |\n| $e^x$ | $e^x$ |\n| $\\ln x$ | $1/x$ |\n\n### Правила дифференцирования\n- $(u + v)' = u' + v'$\n- $(uv)' = u'v + uv'$\n- $(u/v)' = (u'v - uv') / v^2$\n- Цепное правило: $(f(g(x)))' = f'(g(x)) \\cdot g'(x)$",
+    "examples": [
+      {
+        "id": "ex_deriv_1",
+        "title": "Дифференцирование полинома",
+        "steps": [
+          { "stepNumber": 1, "description": "Найти производную функции", "formula": "$f(x) = 3x^4 - 2x^2 + 5x - 1$" },
+          { "stepNumber": 2, "description": "Применяем правило $(x^n)' = nx^{n-1}$ к каждому члену", "formula": null },
+          { "stepNumber": 3, "description": "Результат", "formula": "$f'(x) = 12x^3 - 4x + 5$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_deriv_1",
+        "topicId": "derivative",
+        "question": "Найдите производную f(x) = x³ − 5x + 2",
+        "options": ["3x² − 5", "x² − 5", "3x² + 2", "3x³ − 5"],
+        "correctIndex": 0,
+        "explanation": "Производная x³ = 3x², производная 5x = 5, производная константы = 0. Итого: 3x² − 5"
+      }
+    ]
+  },
+  {
+    "id": "indefinite_integral",
+    "sectionId": "math_analysis",
+    "title": "Неопределённый интеграл",
+    "orderIndex": 3,
+    "theory": "## Неопределённый интеграл\n\n**Первообразной** функции $f(x)$ называется функция $F(x)$, такая что $F'(x) = f(x)$.\n\n**Неопределённый интеграл** — совокупность всех первообразных:\n\n$$\\int f(x)\\,dx = F(x) + C$$\n\n### Таблица интегралов\n\n$$\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C, \\quad n \\neq -1$$\n\n$$\\int \\sin x\\,dx = -\\cos x + C$$\n\n$$\\int \\cos x\\,dx = \\sin x + C$$\n\n$$\\int e^x\\,dx = e^x + C$$\n\n$$\\int \\frac{1}{x}\\,dx = \\ln|x| + C$$\n\n### Метод подстановки\nЕсли $u = g(x)$, то $\\int f(g(x))g'(x)\\,dx = \\int f(u)\\,du$",
+    "examples": [
+      {
+        "id": "ex_indef_1",
+        "title": "Интегрирование степенной функции",
+        "steps": [
+          { "stepNumber": 1, "description": "Найти интеграл", "formula": "$\\int (3x^2 + 2x - 1)\\,dx$" },
+          { "stepNumber": 2, "description": "Интегрируем каждый член", "formula": "$= x^3 + x^2 - x + C$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_indef_1",
+        "topicId": "indefinite_integral",
+        "question": "Вычислите ∫ 4x³ dx",
+        "options": ["12x²", "x⁴ + C", "x⁴", "4x⁴ + C"],
+        "correctIndex": 1,
+        "explanation": "∫4x³ dx = 4·x⁴/4 + C = x⁴ + C"
+      }
+    ]
+  },
+  {
+    "id": "definite_integral",
+    "sectionId": "math_analysis",
+    "title": "Определённый интеграл",
+    "orderIndex": 4,
+    "theory": "## Определённый интеграл\n\n**Определённый интеграл** функции $f(x)$ на отрезке $[a, b]$:\n\n$$\\int_a^b f(x)\\,dx = F(b) - F(a)$$\n\nгде $F(x)$ — любая первообразная функции $f(x)$ (формула Ньютона–Лейбница).\n\n### Геометрический смысл\nОпределённый интеграл равен **алгебраической площади** под графиком $f(x)$ на отрезке $[a, b]$.\n\n### Основные свойства\n- **Линейность**: $\\int_a^b [\\alpha f + \\beta g]\\,dx = \\alpha\\int_a^b f\\,dx + \\beta\\int_a^b g\\,dx$\n- **Аддитивность**: $\\int_a^b f\\,dx = \\int_a^c f\\,dx + \\int_c^b f\\,dx$\n- **Симметрия**: если $f$ чётная, то $\\int_{-a}^a f\\,dx = 2\\int_0^a f\\,dx$",
+    "examples": [
+      {
+        "id": "ex_def_1",
+        "title": "Вычисление по формуле Ньютона–Лейбница",
+        "steps": [
+          { "stepNumber": 1, "description": "Вычислить интеграл", "formula": "$\\int_0^2 x^2\\,dx$" },
+          { "stepNumber": 2, "description": "Находим первообразную", "formula": "$F(x) = \\frac{x^3}{3}$" },
+          { "stepNumber": 3, "description": "Подставляем пределы", "formula": "$F(2) - F(0) = \\frac{8}{3} - 0 = \\frac{8}{3}$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_def_1",
+        "topicId": "definite_integral",
+        "question": "Вычислите ∫₀¹ (2x + 1) dx",
+        "options": ["1", "2", "3", "4"],
+        "correctIndex": 1,
+        "explanation": "Первообразная: x² + x. При x=1: 1+1=2. При x=0: 0. Ответ: 2−0 = 2"
+      },
+      {
+        "id": "p_def_2",
+        "topicId": "definite_integral",
+        "question": "Чему равно ∫₁³ 2x dx?",
+        "options": ["4", "6", "8", "10"],
+        "correctIndex": 2,
+        "explanation": "Первообразная: x². F(3)−F(1) = 9−1 = 8"
+      }
+    ]
+  },
+  {
+    "id": "matrices_intro",
+    "sectionId": "linear_algebra",
+    "title": "Введение в матрицы",
+    "orderIndex": 1,
+    "theory": "## Матрица\n\n**Матрица** — прямоугольная таблица чисел, упорядоченных по строкам и столбцам.\n\nМатрица размера $m \\times n$ содержит $m$ строк и $n$ столбцов:\n\n$$A = \\begin{pmatrix} a_{11} & a_{12} & \\cdots & a_{1n} \\\\ a_{21} & a_{22} & \\cdots & a_{2n} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ a_{m1} & a_{m2} & \\cdots & a_{mn} \\end{pmatrix}$$\n\n### Виды матриц\n- **Квадратная**: $m = n$\n- **Нулевая**: все элементы равны нулю\n- **Единичная** $E$: $e_{ij} = 1$ при $i = j$, иначе $0$\n- **Диагональная**: ненулевые элементы только на главной диагонали\n- **Симметричная**: $A = A^T$",
+    "examples": [
+      {
+        "id": "ex_matrix_1",
+        "title": "Запись матрицы и обращение к элементам",
+        "steps": [
+          { "stepNumber": 1, "description": "Запишем матрицу 2×3", "formula": "$A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{pmatrix}$" },
+          { "stepNumber": 2, "description": "Элемент a₁₂ — строка 1, столбец 2", "formula": "$a_{12} = 2$" },
+          { "stepNumber": 3, "description": "Элемент a₂₃ — строка 2, столбец 3", "formula": "$a_{23} = 6$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_matrix_1",
+        "topicId": "matrices_intro",
+        "question": "Матрица A имеет размер 3×4. Сколько в ней элементов?",
+        "options": ["7", "12", "9", "16"],
+        "correctIndex": 1,
+        "explanation": "3 строки × 4 столбца = 12 элементов"
+      }
+    ]
+  },
+  {
+    "id": "matrices_sum",
+    "sectionId": "linear_algebra",
+    "title": "Сложение матриц",
+    "orderIndex": 2,
+    "theory": "## Сложение матриц\n\nДве матрицы можно складывать только если они **одинакового размера** $m \\times n$.\n\nРезультат — матрица того же размера:\n\n$$C = A + B \\Leftrightarrow c_{ij} = a_{ij} + b_{ij}$$\n\n### Свойства\n1. **Коммутативность**: $A + B = B + A$\n2. **Ассоциативность**: $(A + B) + C = A + (B + C)$\n3. **Нейтральный элемент**: $A + O = A$\n4. **Противоположная матрица**: $A + (-A) = O$",
+    "examples": [
+      {
+        "id": "ex_sum_1",
+        "title": "Сложение матриц 2×2",
+        "steps": [
+          { "stepNumber": 1, "description": "Даны матрицы", "formula": "$A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix},\\quad B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}$" },
+          { "stepNumber": 2, "description": "Складываем соответствующие элементы", "formula": "$A + B = \\begin{pmatrix} 6 & 8 \\\\ 10 & 12 \\end{pmatrix}$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_sum_1",
+        "topicId": "matrices_sum",
+        "question": "Можно ли сложить матрицу 2×3 с матрицей 3×2?",
+        "options": ["Да", "Нет", "Только квадратные", "Только нулевые"],
+        "correctIndex": 1,
+        "explanation": "Сложение возможно только для матриц одинакового размера m×n"
+      }
+    ]
+  },
+  {
+    "id": "matrices_mul",
+    "sectionId": "linear_algebra",
+    "title": "Умножение матриц",
+    "orderIndex": 3,
+    "theory": "## Умножение матриц\n\nПроизведение $A \\cdot B$ определено, если **число столбцов A равно числу строк B**.\n\nЕсли $A$ — матрица $m \\times k$, $B$ — матрица $k \\times n$, результат $C = AB$ — матрица $m \\times n$:\n\n$$c_{ij} = \\sum_{t=1}^{k} a_{it} \\cdot b_{tj}$$\n\n### Важные свойства\n- **Не коммутативно**: $AB \\neq BA$ в общем случае\n- **Ассоциативно**: $(AB)C = A(BC)$\n- **Дистрибутивно**: $A(B+C) = AB + AC$\n- $AE = EA = A$, где $E$ — единичная матрица",
+    "examples": [
+      {
+        "id": "ex_mul_1",
+        "title": "Умножение матриц 2×2",
+        "steps": [
+          { "stepNumber": 1, "description": "Даны матрицы", "formula": "$A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix},\\quad B = \\begin{pmatrix} 2 & 0 \\\\ 1 & 3 \\end{pmatrix}$" },
+          { "stepNumber": 2, "description": "Вычисляем c₁₁ = 1·2 + 2·1 = 4, c₁₂ = 1·0 + 2·3 = 6", "formula": null },
+          { "stepNumber": 3, "description": "Вычисляем c₂₁ = 3·2 + 4·1 = 10, c₂₂ = 3·0 + 4·3 = 12", "formula": null },
+          { "stepNumber": 4, "description": "Результат", "formula": "$AB = \\begin{pmatrix} 4 & 6 \\\\ 10 & 12 \\end{pmatrix}$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_mul_1",
+        "topicId": "matrices_mul",
+        "question": "Матрица A имеет размер 3×2, матрица B — 2×4. Каков размер AB?",
+        "options": ["2×2", "3×4", "4×3", "6×8"],
+        "correctIndex": 1,
+        "explanation": "(3×2)·(2×4) = 3×4"
+      }
+    ]
+  },
+  {
+    "id": "determinant",
+    "sectionId": "linear_algebra",
+    "title": "Определитель матрицы",
+    "orderIndex": 4,
+    "theory": "## Определитель\n\n**Определитель** квадратной матрицы — число, характеризующее матрицу.\n\nДля матрицы 2×2:\n$$\\det A = \\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = ad - bc$$\n\nДля матрицы 3×3 (правило Саррюса):\n$$\\det A = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32}$$\n$$- a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33}$$\n\n### Свойства\n- $\\det(AB) = \\det A \\cdot \\det B$\n- $\\det(A^T) = \\det A$\n- Если $\\det A \\neq 0$, матрица **невырожденная** (обратная существует)\n- При перестановке двух строк знак меняется",
+    "examples": [
+      {
+        "id": "ex_det_1",
+        "title": "Определитель 2×2",
+        "steps": [
+          { "stepNumber": 1, "description": "Найти определитель", "formula": "$\\det\\begin{pmatrix} 3 & 2 \\\\ 1 & 4 \\end{pmatrix}$" },
+          { "stepNumber": 2, "description": "Применяем формулу ad − bc", "formula": "$= 3 \\cdot 4 - 2 \\cdot 1 = 12 - 2 = 10$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_det_1",
+        "topicId": "determinant",
+        "question": "Чему равен det [[5,3],[2,4]]?",
+        "options": ["14", "26", "20", "8"],
+        "correctIndex": 0,
+        "explanation": "5·4 − 3·2 = 20 − 6 = 14"
+      }
+    ]
+  },
+  {
+    "id": "ode_first",
+    "sectionId": "diff_equations",
+    "title": "ОДУ первого порядка",
+    "orderIndex": 1,
+    "theory": "## Обыкновенные дифференциальные уравнения\n\n**ОДУ первого порядка** — уравнение вида:\n\n$$F(x, y, y') = 0 \\quad\\text{или}\\quad y' = f(x, y)$$\n\n### Уравнения с разделяющимися переменными\n\n$$\\frac{dy}{dx} = g(x) \\cdot h(y)$$\n\nМетод решения — разделить переменные:\n\n$$\\frac{dy}{h(y)} = g(x)\\,dx$$\n\nи интегрировать обе части.\n\n### Линейные ОДУ первого порядка\n\n$$y' + P(x)y = Q(x)$$\n\nРешение методом вариации постоянной или через интегрирующий множитель:\n\n$$\\mu(x) = e^{\\int P(x)\\,dx}$$",
+    "examples": [
+      {
+        "id": "ex_ode_1",
+        "title": "Уравнение с разделяющимися переменными",
+        "steps": [
+          { "stepNumber": 1, "description": "Решить уравнение", "formula": "$y' = 2xy$" },
+          { "stepNumber": 2, "description": "Разделяем переменные", "formula": "$\\frac{dy}{y} = 2x\\,dx$" },
+          { "stepNumber": 3, "description": "Интегрируем обе части", "formula": "$\\ln|y| = x^2 + C_1$" },
+          { "stepNumber": 4, "description": "Общее решение", "formula": "$y = Ce^{x^2}$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_ode_1",
+        "topicId": "ode_first",
+        "question": "Какой тип уравнения: y' = x·y ?",
+        "options": ["Линейное однородное", "С разделяющимися переменными", "Бернулли", "Риккати"],
+        "correctIndex": 1,
+        "explanation": "y' = x·y можно записать как dy/y = x dx — переменные разделяются"
+      }
+    ]
+  },
+  {
+    "id": "probability_basics",
+    "sectionId": "probability",
+    "title": "Случайные события",
+    "orderIndex": 1,
+    "theory": "## Теория вероятностей\n\n**Вероятность** события $A$ — число $P(A) \\in [0, 1]$, характеризующее степень возможности наступления события.\n\n### Классическое определение\n\n$$P(A) = \\frac{m}{n}$$\n\nгде $m$ — число благоприятных исходов, $n$ — общее число равновозможных исходов.\n\n### Теоремы сложения и умножения\n\n- **Сложение** (несовместные события): $P(A+B) = P(A) + P(B)$\n- **Сложение** (произвольные): $P(A \\cup B) = P(A) + P(B) - P(AB)$\n- **Умножение** (независимые): $P(AB) = P(A) \\cdot P(B)$\n- **Условная вероятность**: $P(A|B) = \\frac{P(AB)}{P(B)}$",
+    "examples": [
+      {
+        "id": "ex_prob_1",
+        "title": "Классическая вероятность",
+        "steps": [
+          { "stepNumber": 1, "description": "В урне 3 красных и 7 белых шара. Вероятность вытащить красный?", "formula": null },
+          { "stepNumber": 2, "description": "Всего исходов n = 10, благоприятных m = 3", "formula": "$P = \\frac{3}{10} = 0.3$" }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_prob_1",
+        "topicId": "probability_basics",
+        "question": "Кубик бросают один раз. P(выпадет чётное число) = ?",
+        "options": ["1/6", "1/3", "1/2", "2/3"],
+        "correctIndex": 2,
+        "explanation": "Чётные числа: 2, 4, 6 — три исхода из шести. P = 3/6 = 1/2"
+      }
+    ]
+  },
+  {
+    "id": "graph_theory",
+    "sectionId": "discrete_math",
+    "title": "Теория графов",
+    "orderIndex": 3,
+    "theory": "## Графы\n\n**Граф** $G = (V, E)$ — множество вершин $V$ и рёбер $E$.\n\n### Виды графов\n- **Ориентированный** (орграф): рёбра имеют направление\n- **Взвешенный**: каждому ребру назначен вес\n- **Полный** $K_n$: каждая пара вершин соединена ребром\n- **Дерево**: связный граф без циклов\n\n### Характеристики\n- **Степень вершины** $\\deg(v)$ — число рёбер, инцидентных вершине\n- **Лемма о рукопожатиях**: $\\sum_{v} \\deg(v) = 2|E|$\n- **Путь** — последовательность различных вершин\n- **Цикл** — путь, в котором начальная и конечная вершины совпадают\n\n### Алгоритм Дейкстры\nНаходит кратчайшие пути от одной вершины до всех остальных в графе с неотрицательными весами.",
+    "examples": [
+      {
+        "id": "ex_graph_1",
+        "title": "Подсчёт степеней вершин",
+        "steps": [
+          { "stepNumber": 1, "description": "Граф с вершинами {A, B, C, D} и рёбрами {AB, BC, CD, AD, BD}", "formula": null },
+          { "stepNumber": 2, "description": "Степень A = 2 (рёбра AB, AD)", "formula": null },
+          { "stepNumber": 3, "description": "Степень B = 3 (рёбра AB, BC, BD)", "formula": null },
+          { "stepNumber": 4, "description": "Проверка: сумма степеней = 2+3+2+3 = 10 = 2·5 рёбер ✓", "formula": null }
+        ]
+      }
+    ],
+    "practiceItems": [
+      {
+        "id": "p_graph_1",
+        "topicId": "graph_theory",
+        "question": "В полном графе K₄ (4 вершины) сколько рёбер?",
+        "options": ["4", "6", "8", "12"],
+        "correctIndex": 1,
+        "explanation": "K_n имеет n(n-1)/2 рёбер. K₄: 4·3/2 = 6"
+      }
+    ]
+  }
+]
