@@ -12,7 +12,7 @@
 | База данных | Room (чат, прогресс) |
 | Настройки | DataStore Preferences |
 | Сеть | Retrofit 2 + OkHttp |
-| ИИ | OpenAI GPT-4o-mini (легко заменяется на Gemini / Groq) |
+| ИИ | OpenAI GPT-4o-mini (легко заменяется на Gemini / Groq) | 
 | Контент | JSON в assets (офлайн) |
 | Рендеринг формул | WebView + MathJax 3 (LaTeX) |
 | Рендеринг Markdown | Markwon (чат-сообщения) |

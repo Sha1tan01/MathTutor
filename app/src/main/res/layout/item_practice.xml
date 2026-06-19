@@ -28,14 +28,11 @@
             android:letterSpacing="0.08"
             android:layout_marginBottom="8dp"/>
 
-        <TextView
-            android:id="@+id/tv_question"
+        <ru.mathtutor.app.presentation.common.MathWebView
+            android:id="@+id/wv_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:lineSpacingMultiplier="1.4"
+            android:minHeight="50dp"
             android:layout_marginBottom="14dp"/>
 
         <TextView
@@ -86,14 +83,12 @@
             android:clickable="true"
             android:focusable="true"/>
 
-        <TextView
-            android:id="@+id/tv_explanation"
+        <ru.mathtutor.app.presentation.common.MathWebView
+            android:id="@+id/wv_explanation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:textColor="@color/blue_700"
+            android:minHeight="40dp"
             android:background="@drawable/bg_explanation"
-            android:padding="10dp"
             android:layout_marginTop="4dp"
             android:visibility="gone"/>
 

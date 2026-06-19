@@ -25,7 +25,6 @@ class ExamplesAdapter(
         fun bind(example: Example) {
             b.tvExampleTitle.text = example.title
             val stepsAdapter = ExampleStepsAdapter(onAskAi = { stepText ->
-                // Передаём название примера + текст шага в ИИ-чат
                 val content = "Пример: «${example.title}»\n$stepText"
                 onAskAi?.invoke(content)
             })
@@ -111,7 +110,7 @@ class PracticeAdapter(
     inner class VH(private val b: ItemPracticeBinding) : RecyclerView.ViewHolder(b.root) {
         fun bind(ui: PracticeItemUi) {
             val item = ui.item
-            b.tvQuestion.text = item.question
+            b.wvQuestion.setMarkdownLatex(item.question)
             b.tvQuestionNumber.text = "Задание ${adapterPosition + 1} из ${itemCount}"
 
             val optionViews = listOf(b.option0, b.option1, b.option2, b.option3)
@@ -142,8 +141,8 @@ class PracticeAdapter(
             }
 
             if (ui.selectedIndex != null) {
-                b.tvExplanation.visibility = View.VISIBLE
-                b.tvExplanation.text = item.explanation
+                b.wvExplanation.visibility = View.VISIBLE
+                b.wvExplanation.setMarkdownLatex(item.explanation)
 
                 // Показываем кнопку «Объясни решение» после ответа
                 if (onAskAi != null) {
@@ -157,7 +156,7 @@ class PracticeAdapter(
                     }
                 }
             } else {
-                b.tvExplanation.visibility = View.GONE
+                b.wvExplanation.visibility = View.GONE
                 b.btnAskAiPractice.visibility = View.GONE
             }
         }

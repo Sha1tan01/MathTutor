@@ -1,98 +1,98 @@
 [
   {
-    "id": "math_analysis",
-    "title": "Математический анализ",
-    "icon": "∫",
-    "description": "Пределы, производные, интегралы",
+    "id": "linear_algebra",
+    "title": "Линейная алгебра",
+    "icon": "λ",
+    "description": "Матрицы, определители, СЛАУ",
     "topicCount": 8,
     "colorTag": "blue"
   },
   {
-    "id": "linear_algebra",
-    "title": "Линейная алгебра",
-    "icon": "Σ",
-    "description": "Матрицы, векторы, детерминанты",
-    "topicCount": 7,
+    "id": "vector_algebra",
+    "title": "Векторная алгебра",
+    "icon": "→",
+    "description": "Векторы и их произведения",
+    "topicCount": 5,
     "colorTag": "teal"
   },
   {
-    "id": "diff_equations",
-    "title": "Дифференциальные уравнения",
-    "icon": "λ",
-    "description": "ОДУ, ДУЧП, методы решения",
+    "id": "analytic_geometry",
+    "title": "Аналитическая геометрия",
+    "icon": "△",
+    "description": "Прямые, плоскости, кривые",
     "topicCount": 6,
     "colorTag": "purple"
   },
   {
-    "id": "analytic_geom",
-    "title": "Аналитическая геометрия",
-    "icon": "π",
-    "description": "Прямые, кривые, поверхности",
+    "id": "intro_analysis",
+    "title": "Введение в анализ",
+    "icon": "∞",
+    "description": "Множества, функции, пределы",
     "topicCount": 5,
-    "colorTag": "green"
+    "colorTag": "amber"
   },
   {
-    "id": "probability",
-    "title": "Теория вероятностей",
-    "icon": "∂",
-    "description": "Случайные события, распределения",
-    "topicCount": 5,
-    "colorTag": "orange"
-  },
-  {
-    "id": "statistics",
-    "title": "Математическая статистика",
-    "icon": "μ",
-    "description": "Оценки, гипотезы, регрессия",
+    "id": "limits",
+    "title": "Пределы функций",
+    "icon": "lim",
+    "description": "Замечательные пределы",
     "topicCount": 4,
     "colorTag": "red"
   },
   {
-    "id": "discrete_math",
-    "title": "Дискретная математика",
-    "icon": "∀",
-    "description": "Графы, комбинаторика, логика",
-    "topicCount": 5,
+    "id": "differential_calculus",
+    "title": "Дифференциальное исчисление",
+    "icon": "f′",
+    "description": "Производные и их применение",
+    "topicCount": 7,
     "colorTag": "blue"
   },
   {
-    "id": "series",
-    "title": "Числовые ряды",
-    "icon": "∞",
-    "description": "Сходимость, разложение функций",
-    "topicCount": 3,
+    "id": "integral_calculus",
+    "title": "Интегральное исчисление",
+    "icon": "∫",
+    "description": "Интегралы одной переменной",
+    "topicCount": 6,
     "colorTag": "teal"
   },
   {
     "id": "multivariable",
-    "title": "Функции многих переменных",
-    "icon": "∇",
+    "title": "Функции нескольких переменных",
+    "icon": "∂",
     "description": "Частные производные, экстремумы",
-    "topicCount": 4,
+    "topicCount": 5,
     "colorTag": "purple"
   },
   {
-    "id": "multiple_int",
+    "id": "multiple_integrals",
     "title": "Кратные интегралы",
-    "icon": "⊗",
-    "description": "Двойные, тройные интегралы",
-    "topicCount": 3,
-    "colorTag": "green"
-  },
-  {
-    "id": "operational",
-    "title": "Операционное исчисление",
-    "icon": "℃",
-    "description": "Преобразование Лапласа, Фурье",
+    "icon": "∬",
+    "description": "Двойные и тройные интегралы",
     "topicCount": 4,
-    "colorTag": "orange"
+    "colorTag": "amber"
   },
   {
-    "id": "complex",
-    "title": "Комплексный анализ",
-    "icon": "ℝ",
-    "description": "Функции комплексного переменного",
-    "topicCount": 3,
+    "id": "diff_equations",
+    "title": "Дифференциальные уравнения",
+    "icon": "dy",
+    "description": "ОДУ и их решения",
+    "topicCount": 6,
     "colorTag": "red"
+  },
+  {
+    "id": "series",
+    "title": "Ряды",
+    "icon": "Σ",
+    "description": "Числовые и функциональные ряды",
+    "topicCount": 5,
+    "colorTag": "blue"
+  },
+  {
+    "id": "probability",
+    "title": "Теория вероятностей",
+    "icon": "P",
+    "description": "События и случайные величины",
+    "topicCount": 6,
+    "colorTag": "teal"
   }
 ]
