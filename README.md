@@ -162,32 +162,7 @@ Markdown в сообщениях чата рендерится через **Mark
 
 ---
 
-## Замена AI-провайдера
 
-### Groq (бесплатно, быстро)
-
-```properties
-# local.properties
-AI_API_KEY=gsk_ваш_ключ
-```
-
-```kotlin
-// build.gradle.kts — buildConfigField
-buildConfigField("String", "AI_BASE_URL", "\"https://api.groq.com/openai/v1/\"")
-```
-
-В ` AiRepositoryImpl.kt` измените модель:
-```kotlin
-val model: String = "llama-3.1-8b-instant"
-```
-
-Groq полностью совместим с OpenAI API — больше ничего менять не нужно.
-
-### Google Gemini
-
-Требует изменения формата запроса в `OpenAiApi.kt` и `AiRepositoryImpl.kt`, так как Gemini использует другой REST API.
-
----
 
 ## Архитектура
 
